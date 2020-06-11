@@ -1,31 +1,30 @@
 # Word2Vec
 Train a gensim word2vec model on news data.
 
-# Oluşturduğum haber derlemi ve Gensim kütüphanesini kullanarak bir Word2Vec modeli oluşturma.
+# Creating a Word2Vec model using the news corpus and Gensim library I created
 
-## Bir derlem (corpus) oluşturma
+## Creating a corpus
 
-Derlem oluşturma işlemi **web_scraping .py** adlı dosyada bulunmaktadır.
+The creating corpus process is located in the file named ** web scraping .by **.
  
-[Web scraping nedir? ]( https://github.com/zaferfaruk01/web-scraping-).
+[What is web scraping? ]( https://github.com/zaferfaruk01/web-scraping-).
 
-- "https://sondakika.haberler.com" haber sitesinde bulunan güncel türkçe haber metinlerini kullanarak bir derlem (corpus)
-oluşturmak için Web scraping işlemi ile yalnızca haberin ana metnini alıcağız.
-- Sayfanın metin içeriğinde temizleme ya da düzeltme amaçlı olarak gerekli işlemleri yaparız.
-- Her bir haber metnini cümle bazlı olarak bölümleriz.(yani sentence segmentation işlemi uygularız,nltk ya da uygun başka bir kütüphane kullanabilirsiniz)
-- Derlem dosyasındaki alan isimleri ve sırası aşağıdaki gibidir:
-  1.	url: haber metninin alındığı sayfanın tam adresi
-  2.	segment_no: bir metinde yapılan cümle bazlı bölümleme sonunda, ilgili cümlenin kaçıncı segment olduğu
-  3.	cumle_icerigi: cümlenin metin içeriği
-  4.	sözcük_sayisi: cümlede bulunan sözcük sayısı
+- In order to create a corpus using the current Turkish news texts on "https://sondakika.haberler.com" , we will only get the main text of the news with Web scraping.
+- We take the necessary process for cleaning or correction in the text content of the page.
+- We divide each news text on a sentence basis.(sentence segmentation,You can use nltk or another library)
+- The names and order of the fields in the corpus file are as follows:
+  1.	url: The full address of the page from which the news text was received.
+  2.	segment_no: What segment is the sentence
+  3.	cumle_icerigi: Text content of the sentence
+  4.	sözcük_sayisi: Number of words in the sentence
 
-## Word2Vec modeli oluşturma
+## Create a Word2Vec model
 
-- Oluşturduğumuz **urldata2.csv** haber derlemini ve Gensim kütüphanesini kullanarak Word2Vec modeli oluşturduk.
-- Bu model üzerinde benzerlik ölümleri gerçekleştirdim.
--	Benzerlik ölçümleri için kullandığım sorgular ve elde ettiğiniz sonuçlar:
+- We created the Word2Vec model using the ** url data2.csv ** news corpus we created and then Gensim library.
+- I made similarity measurements on this model.
+-	The queries I use for similarity measurements and the results we get:
 
-###### Sorgular
+###### Queries
 
 ```python
 #kelimeler listesiki veriler ile benzerlik ölçümü yapılıyor.
@@ -38,7 +37,7 @@ for k in kelimeler:
     #print(type(k))
     
 ```
-###### Sonuçlar
+###### Results
 
 dolar kelimesi için benzerlik ölçümü: 
 <br>
